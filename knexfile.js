@@ -15,6 +15,7 @@ module.exports = {
     seeds: {
       directory: path.join(__dirname, "src", "db", "seeds"),
     },
+    useNullAsDefault: true,
   },
 
   production: {
@@ -27,6 +28,7 @@ module.exports = {
     seeds: {
       directory: path.join(__dirname, "src", "db", "seeds"),
     },
+    useNullAsDefault: true,
   },
 
   test: {
@@ -40,6 +42,7 @@ module.exports = {
     seeds: {
       directory: path.join(__dirname, "src", "db", "seeds"),
     },
-    useNullAsDefault: true,
+    
+    useNullAsDefault: true
   },
 };

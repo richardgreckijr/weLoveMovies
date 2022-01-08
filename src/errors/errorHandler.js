@@ -1,14 +1,9 @@
 /* 
-Error handling function: Returns status code 500.
+Generic Error handler
 */
+function errorHandler(error, req, res, next) {
+    const { status = 500, message = "Something went wrong!" } = error;
+    res.status(status).json({ error: message });
+}
 
-function errorHandler(err, req, res, next) {
-    console.error(err);
-    const {
-        status = 500,
-        message = 'Something went wrong! 😓' 
-    } = err;
-    res.status(status).json({err: message});
-};
-
-module.exports = errorHandler;
+module.exports = errorHandler

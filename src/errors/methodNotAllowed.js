@@ -1,7 +1,6 @@
 /* 
 Middleware to assist in routing request errors
 */
-
 function methodNotAllowed(req, res, next) {
   next({
     status: 405,
