@@ -19,9 +19,9 @@ function list() {
 function listMoviesShowing() {
   return knex("movies as m")
     .join("movies_theaters as mt", "m.movie_id", "mt.movie_id")
-    .select("m.*")
+    .distinct("m.*")
     .where({ "mt.is_showing": true })
-    .groupBy("m.movie_id");
+    .orderBy("m.movie_id");
 }
 
 // Returns First movie that matches requested Movie_id
